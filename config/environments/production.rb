@@ -90,4 +90,7 @@ Rails.application.configure do
     :secret_access_key => ENV['AWS_SECRET_ACCESS_KEY']
     }
   }
+
+  #Devise config
+  config.action_mailer.default_url_options = { host: 'ancient-ocean-8424.herokuapp.com' }
 end
