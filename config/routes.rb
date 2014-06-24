@@ -57,4 +57,5 @@ Rails.application.routes.draw do
 
   root 'welcome#index'
   resources :works
+  resources :images
 end
