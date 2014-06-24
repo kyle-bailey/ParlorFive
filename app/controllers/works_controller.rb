@@ -1,11 +1,11 @@
 class WorksController < ApplicationController
 
 	def index
-		@works = Works.all
+		@works = Work.all
 	end
 
 	def new
-		@work = Works.new
+		@work = Work.new
 	end
 
 	def create
