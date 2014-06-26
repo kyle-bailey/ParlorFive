@@ -47,7 +47,8 @@ ActiveRecord::Schema.define(version: 20140624020310) do
 
   create_table "works", force: true do |t|
     t.text     "description"
-    t.string   "type"
+    t.string   "work_type"
+    t.string   "title"
     t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
