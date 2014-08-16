@@ -1,2 +1,43 @@
-<%= @work.title %>
-<%= image_tag @image.media.url() %>
+<div class="container gallery clearfix">
+  
+	<% if !work.title.empty? %>
+  	<div class="sixteen columns">
+  		<h1 class="page-title"><%= @work.title %><span class="line"></span></h1>
+  	</div>
+ 	<% end %>
+   
+  <div class="sixteen columns top-2">
+  	<h2 class="title">By 
+  		<!-- <a style="cursor:pointer; color:#00abc6;" href="profile.jsp?id=<%=a.accountId %>"><%= @artist.name %></a> -->
+  		<span class="line"></span>
+  	</h2>
+  </div>
+
+   <div class="twelve columns top bottom">
+
+	<%= image_tag @image.media.url() %>
+
+  </div>
+   
+  <div class="four columns bottom project-details">
+   	<%if !@work.description.empty? %>
+	    <h2 class="title top-5  bottom-2">Description <span class="line"></span></h2>
+	    <div class="about-project">
+	      <p><%= @work.description %></p>
+	    </div>
+    <% end %>
+     
+  	<div class="clearfix"></div>
+   
+  	<h2 class="title bottom-2">Tags <span class="line"></span></h2>
+   
+    <div class="popular-tags top">
+    	<% if tags != null %>
+      	<% tags.each do |tag| %>
+      		<a href="/tag/#{tag.id}"><%= tag.label %></a>
+      	<% end %>
+    	<% end %>
+    </div>
+  </div>
+
+</div>
