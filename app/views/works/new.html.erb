@@ -9,7 +9,7 @@
   <%= f.label :description %>
   <%= f.text_area :description %>
 
-  <%= fields_for :image, @work.image do |image| %>
+  <%= f.fields_for :image do |image| %>
   	<%= image.label :media %><br />
   	<%= image.file_field :media %>
   <% end %>
