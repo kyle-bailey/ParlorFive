@@ -5,7 +5,7 @@ class WorksController < ApplicationController
 	end
 
 	def new
-		@work = Work.new #Can't save - need to do a two step process. Save the form for the image, make sure its correct. Once that is saved, then attach the image
+		@work = Work.new
 		@user = current_user
 	end
 
