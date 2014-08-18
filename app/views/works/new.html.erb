@@ -9,9 +9,9 @@
   <%= f.label :description %>
   <%= f.text_area :description %>
 
-  <%= f.fields_for :image do |image| %>
-  	<%= image.label :media %><br />
-  	<%= image.file_field :media %>
+  <%= fields_for @image do |image_form| %>
+  	<%= image_form.label :media %><br />
+  	<%= image_form.file_field :media %>
   <% end %>
 
   <%= f.hidden_field :user_id, :value => @user.id %>

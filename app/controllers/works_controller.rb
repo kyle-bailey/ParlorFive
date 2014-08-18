@@ -6,13 +6,20 @@ class WorksController < ApplicationController
 
 	def new
 		@work = Work.new
+		@image = Image.new
 		@user = current_user
 	end
 
 	def create
 		@work = Work.new(permitted_params)
+		@image = Image.new(params[:images])
 		if @work.save
-      redirect_to user_path(@work.user_id), notice: 'Work was successfully created.'
+			@image.work_id = @work.id
+			if @image.save
+      	redirect_to user_path(@work.user_id), notice: 'Work was successfully created.'
+      else
+      	render action: 'new'
+      end
     else
       render action: 'new'
     end
