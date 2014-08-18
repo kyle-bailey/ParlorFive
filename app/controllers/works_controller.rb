@@ -12,7 +12,7 @@ class WorksController < ApplicationController
 
 	def create
 		@work = Work.new(permitted_params)
-		@image = Image.new(params[:image])
+		@image = Image.new(image_params)
 		if @work.save
 			@image.work_id = @work.id
 			if @image.save
@@ -33,6 +33,10 @@ class WorksController < ApplicationController
 	private
 	def permitted_params
     params.require(:work).permit(:title, :work_type, :description, :user_id)
+  end
+
+  def image_params
+    params.require(:image).permit(:media)
   end
 
 end
